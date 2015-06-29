@@ -1,0 +1,19 @@
+{
+  "name": "bmicalc",
+  "version": "0.0.0",
+  "description": "BMI Calculator",
+  "authors": [
+    "Sahar Jafari"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1"
+  }
+}
