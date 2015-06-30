@@ -1,1 +1,3 @@
-angular.module('BMI', ['ngMaterial'])
+angular.module('BMI', ['ngMaterial']);
+
+alert('Hey!');
