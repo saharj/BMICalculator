@@ -7,21 +7,32 @@
 		<!-- endbower -->
 		<link rel="stylesheet" href="./style/main.css">
 	</head>
+
 	<body>
 		<h1>BMI</h1>
-		<div layout="column">
+		<div class="info" layout="column">
 			<div layout="row" layout-align="start center">
 				<p><span>Weight</span></p>
-				<input class="wight" type="number">
+				<input class="weight" type="number">
+
+				<div class="switch_options">
+					<span class="lb">LB</span>
+					<span class="kg">KG</span>
+					<input type="hidden" class="height_val" value="0"/>
+				</div>
 			</div>
 			<div layout="row" layout-align="start center">
 				<p><span>Height</span></p>
 				<input class="height" type="number">
-				<md-switch md-no-ink ng-model="hasInk" aria-label="No Ink Effects">
-  No Ink Effects
-</md-switch>
+				<span class="first">ft</span>
+				<input class="height" type="number">
+				<span class="second">in</span>
+				<!-- <md-switch md-no-ink ng-model="hasInk" aria-label="No Ink Effects">
+				  No Ink Effects
+				</md-switch> -->
 			</div>
 		</div>
+
 		<div class="show">
 			<h1>21</h1>
 		</div>
@@ -32,6 +43,7 @@
 		<script src="bower_components/angular-aria/angular-aria.js"></script>
 		<script src="bower_components/angular-material/angular-material.js"></script>
 		<!-- endbower -->
+		<script src="./js/jquery-1.11.3.min.js"></script>
 		<script src="./js/bmi.js"></script>
 		<script src="http://127.0.0.1:35729/livereload.js"></script>
 	</body>
