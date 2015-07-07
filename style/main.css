@@ -89,3 +89,7 @@ body .switch_options span.selected {
   border-color: #0082A3;
   color: #fff;
 }
+body .first,
+body .second {
+  width: 20px;
+}

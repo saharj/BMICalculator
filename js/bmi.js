@@ -35,6 +35,8 @@ $(document).ready(function() {
             $(cm).removeClass('selected'); //remove "selected" from other elements in this object class(OFF)
             $(this).addClass('selected'); //add "selected" to the element which was just clicked in this object class(ON) 
             $(input).val(1).change(); //Finally change the value to 1
+            $('.first').text('ft');
+            $('.second').text('in');
         });
  
         //Action on user's click
@@ -48,6 +50,8 @@ $(document).ready(function() {
             $(ft).removeClass('selected'); //remove "selected" from other elements in this object class(OFF)
             $(this).addClass('selected'); //add "selected" to the element which was just clicked in this object class(ON) 
             $(input).val(1).change(); //Finally change the value to 1
+            $('.first').text('m');
+            $('.second').text('cm');
         });
  
     });
