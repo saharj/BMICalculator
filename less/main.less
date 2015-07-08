@@ -10,13 +10,13 @@ body {
       margin: 0 10px 0 20px;
     }
 
-    // div.weight {
-    //   margin-left: 155px;
-    // }
+    div.weight {
+      margin-left: 155px;
+    }
 
     .switch_options {
       display: block;
-      margin-left: 30px;
+      margin-left: 19px;
     }
     .switch_options:before,
     .switch_options:after{
@@ -79,7 +79,27 @@ body {
       color: #fff;
     }
 
-    .first, .second {
-      width: 20px;
+    .height_box {
+      width: 221px;
+      height: 24px;
     }
+
+    .first, .second {
+      visibility: visible;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 10px;
+      margin: 13px 0;
+      opacity: 1;
+      transition-duration: 100ms;
+    }
+
+    .hide {
+      transition-property: opacity;
+      transition-duration: 100ms;
+      opacity: 0;
+    }
+
 }

@@ -23,13 +23,16 @@
 			</div>
 			<div layout="row" layout-align="start center">
 				<p><span>Height</span></p>
-				<input class="height" type="number">
-				<span class="first">ft</span>
-				<input class="height" type="number">
-				<span class="second">in</span>
+				
+				<div class="height_box">
+					<input class="height_f" type="number">
+					<span class="first">ft</span>
+					<input class="height_s" type="number">
+					<span class="second">in</span>
+				</div>
 
 				<div class="switch_options">
-					<span class="ft">Standard</span>
+					<span class="ft">Imperial</span>
 					<span class="cm">Metric</span>
 					<input type="hidden" class="height_val" value="0"/>
 				</div>
@@ -37,7 +40,7 @@
 		</div>
 
 		<div class="show">
-			<h1>21</h1>
+			<h1>0</h1>
 		</div>
 		
 		<!-- bower:js -->

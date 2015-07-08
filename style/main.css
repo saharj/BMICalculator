@@ -12,9 +12,12 @@ body .info input {
   width: 50px;
   margin: 0 10px 0 20px;
 }
+body div.weight {
+  margin-left: 155px;
+}
 body .switch_options {
   display: block;
-  margin-left: 30px;
+  margin-left: 19px;
 }
 body .switch_options:before,
 body .switch_options:after {
@@ -89,7 +92,24 @@ body .switch_options span.selected {
   border-color: #0082A3;
   color: #fff;
 }
+body .height_box {
+  width: 221px;
+  height: 24px;
+}
 body .first,
 body .second {
+  visibility: visible;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 20px;
+  height: 10px;
+  margin: 13px 0;
+  opacity: 1;
+  transition-duration: 100ms;
+}
+body .hide {
+  transition-property: opacity;
+  transition-duration: 100ms;
+  opacity: 0;
 }
