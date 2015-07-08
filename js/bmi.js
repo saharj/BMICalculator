@@ -60,13 +60,45 @@ $(document).ready(function() {
 
 });
 
+var getData = function() {
+	var weight;
+	var height;
+
+	weight = $('.weight').text();
+	height = $('.height_f').text();
+
+	if($('.first').text() === ft) {
+		var inch = $('.height_s').text();
+
+		height = (height * 12) + inch;
+	}
+
+	return height;
+};
+
 var bmiCalc = function(h, w) {
 	var height;
 	var bmi;
 
-	height = h;
-	height = Math.pow(height, 2);
+	height = Math.pow(h, 2);
 	bmi = w / height;
 
 	return bmi;
+};
+
+var status = function(bmi) {
+	var statShow = $('.status');
+	
+	if(bmi < 18.5) {
+		statShow.text('Underweight');
+	}
+	if(bmi >= 18.5 && bmi <=24.9) {
+		statShow.text('Normal');
+	}
+	if(bmi >= 25 && bmi <= 29.9) {
+		statShow.text('Overweight');
+	}
+	else {
+		statShow.text('Obese');
+	}
 };

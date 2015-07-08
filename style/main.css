@@ -110,6 +110,20 @@ body .second {
 }
 body .hide {
   transition-property: opacity;
-  transition-duration: 100ms;
+  transition-duration: 10ms;
   opacity: 0;
+}
+body .result {
+  overflow: auto;
+  margin: 20px;
+}
+body .result h1,
+body .status {
+  width: 155px;
+  float: left;
+  height: 40px;
+  color: blue;
+}
+body .status {
+  margin: 30px 0 0 145px;
 }
