@@ -60,18 +60,24 @@ $(document).ready(function() {
 
 });
 
-var getData = function() {
-	var weight;
-	var height;
+var proccessInput = function() {
+	var height = $('.height_f').val();
+	var weight = $('.weight').val();
 
-	weight = $('.weight').text();
-	height = $('.height_f').text();
-
-	if($('.first').text() === ft) {
-		var inch = $('.height_s').text();
-
-		height = (height * 12) + inch;
+	if($('.weight').val() != "" && $('.height_f').val() != "") {
+		if($('.first').text() === 'ft') {
+			height = setHeight(height);
+		}
 	}
+	console.log(height);
+};
+
+var setHeight = function(h) {
+	
+	var inch = $('.height_s').val();
+	inch = parseInt(inch);
+	h = parseInt(h);
+	var height = (h * 12) + inch;
 
 	return height;
 };
@@ -80,15 +86,17 @@ var bmiCalc = function(h, w) {
 	var height;
 	var bmi;
 
+	w = parseInt(w);
+	
 	height = Math.pow(h, 2);
 	bmi = w / height;
 
 	return bmi;
 };
 
-var status = function(bmi) {
+var showTxt = function(bmi) {
 	var statShow = $('.status');
-	
+
 	if(bmi < 18.5) {
 		statShow.text('Underweight');
 	}
@@ -98,7 +106,14 @@ var status = function(bmi) {
 	if(bmi >= 25 && bmi <= 29.9) {
 		statShow.text('Overweight');
 	}
-	else {
+	if (bmi >= 30) {
 		statShow.text('Obese');
 	}
+	else {
+		statShow.text('Input Error!');
+	}
 };
+
+
+var input = $('input');
+input.keyup();		//TODO
