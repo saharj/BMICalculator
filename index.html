@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html ng-app="BMI">
 	<head>
-		<title>BMI CALC.</title>
+		<title>BMI CALC.</title> -->
 		<!-- bower:css -->
-		<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+		<!-- <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" /> -->
 		<!-- endbower -->
-		<link rel="stylesheet" href="./style/main.css">
+		<!-- <link rel="stylesheet" href="./style/main.css">
 	</head>
 
 	<body>
@@ -42,16 +42,78 @@
 		<div class="result">
 			<h1>0</h1>
 			<h3 class="status">A</h3>
-		</div>
+		</div> -->
 		
 		<!-- bower:js -->
-		<script src="bower_components/angular/angular.js"></script>
+		<!-- <script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-animate/angular-animate.js"></script>
 		<script src="bower_components/angular-aria/angular-aria.js"></script>
-		<script src="bower_components/angular-material/angular-material.js"></script>
+		<script src="bower_components/angular-material/angular-material.js"></script> -->
 		<!-- endbower -->
-		<script src="./js/jquery-1.11.3.min.js"></script>
+		<!-- <script src="./js/jquery-1.11.3.min.js"></script>
 		<script src="./js/bmi.js"></script>
 		<script src="http://127.0.0.1:35729/livereload.js"></script>
 	</body>
+</html> -->
+
+<!DOCTYPE html>
+<html ng-app="BMI">
+<head>
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+	<!-- endbower -->
+	<link rel="stylesheet" href="./style/main.css">
+	
+  <meta charset="utf-8">
+  <title>BMI</title>
+</head>
+<body ng-controller="BMICtrl">
+  <section>
+    <ul>
+      <li ng-class="{active:isSelected(1)}">
+        <a ng-click="setWTab(1)" href>KG</a></li>
+      <li ng-class="{active:isSelected(2)}">
+        <a href ng-click="setWTab(2)">LB</a></li>
+    </ul>
+    
+    <div ng-show="isSelected(1)">
+      <h4>Weight (Kg)</h4>
+      <input type="number" ng-model="weight">
+    </div>
+    
+    <div ng-show="isSelected(2)">
+      <h4>Weight (Lbs)</h4>
+      <input type="number" ng-model="weight">
+    </div>
+    
+    <ul>
+      <li ng-class="{active:isSelected(3)}">
+        <a ng-click="setHTab(3)" href>M</a></li>
+      <li ng-class="{active:isSelected(4)}">
+        <a href ng-click="setHTab(4)">FT</a></li>
+    </ul>
+    
+    <div ng-show="isSelected(3)">
+      <h4>Height (Cm)</h4>
+      <input type="number" ng-model="height">
+    </div>
+    
+    <div ng-show="isSelected(4)">
+      <h4>Height (Ft)</h4>
+      <input type="number" ng-model="height">
+      <p>ft</p>
+      <input type="number" ng-model="heightI">
+      <p>inch</p>
+    </div>
+  </section>
+  <div>BMI = {{calculate()}}</div>
+  	<!--bower:js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
+	<!-- endbower -->
+	
+	<script src="./js/bmi.js"></script>
+	<script src="http://127.0.0.1:35729/livereload.js"></script>
+</body>
 </html>
