@@ -137,7 +137,7 @@ app.controller('BMICtrl', function($scope){
 
   $scope.calculate = function(){
   	var w = $scope.weight;
-  	var h = scope.height;
+  	var h = $scope.heightM;
 
   	if(!w || !h) {
   		return 0;
@@ -148,10 +148,30 @@ app.controller('BMICtrl', function($scope){
   	}
   	if($scope.heightTab === 4){
   		var inch = $scope.heightI;
-  		h = ((h * 12) + inch) / 0.3937;
+  		h = ((h * 12) + inch) * 0.0254;
   	}
 
     h = Math.pow(h, 2);
     return w / h;
+  };
+
+  $scope.showTxt = function() {
+	var bmi = $scope.calculate();
+
+	if(bmi < 18.5) {
+		return 'Underweight';
+	}
+	if(bmi >= 18.5 && bmi <=24.9) {
+		return 'Normal';
+	}
+	if(bmi >= 25 && bmi <= 29.9) {
+		return 'Overweight';
+	}
+	if (bmi >= 30) {
+		return 'Obese';
+	}
+	else {
+		return 'Input Error!';
+	}
   };
 });
