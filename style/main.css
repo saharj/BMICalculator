@@ -1,12 +1,33 @@
 body {
   background-color: rgba(167, 255, 235, 0.52);
 }
+body md-content {
+  background-color: rgba(167, 255, 235, 0);
+  width: 40%;
+  min-width: 350px;
+}
 body md-card {
   background-color: white;
-  width: 50%;
   min-height: 675px;
   margin-top: 50px;
   padding: 50px;
+}
+body md-card .result {
+  position: absolute;
+  bottom: 200px;
+}
+body md-card md-tabs {
+  min-height: 135px;
+}
+body md-tab {
+  position: static;
+}
+body md-tab span {
+  margin-top: 25px;
+  padding-right: 15px;
+  vertical-align: middle;
+  line-height: 30px;
+  height: 35px;
 }
 body a {
   text-decoration: none;

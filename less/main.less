@@ -1,11 +1,32 @@
 body {
   background-color: rgba(167, 255, 235, 0.52);
+  md-content {
+    background-color: rgba(167, 255, 235, 0);
+    width: 40%;
+    min-width: 350px;
+  }
   md-card{
     background-color: white;
-    width: 50%;
     min-height: 675px;
     margin-top: 50px;
     padding: 50px;
+    .result {
+      position: absolute;
+      bottom: 200px;
+    }
+    md-tabs {
+      min-height: 135px;
+    }
+  }
+  md-tab {
+    position: static;
+    span {
+      margin-top: 25px;
+    padding-right: 15px;
+    vertical-align: middle;
+    line-height: 30px;
+    height: 35px;
+    }
   }
   a {
     text-decoration: none;
