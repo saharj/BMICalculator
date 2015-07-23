@@ -5,9 +5,10 @@
 	<!-- endbower -->
 	<link rel="stylesheet" href="./style/main.css">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BMI</title>
 </head>
-<body ng-controller="BMICtrl">
+<body ng-controller="BMICtrl" ng-cloak>
   <div layout="column" layout-align="space-between center">
   <md-content class="md-padding">
   	<md-card>
@@ -16,41 +17,50 @@
 	    		<md-tab-label>KG</md-tab-label>
 	    		<md-tab-body>
 					<h4>Weight (Kg)</h4>
-		      		<input type="number" ng-model="weight">
+					<md-input-container>
+			      		<input type="number" ng-model="weight">
+			      	</md-input-container>
 				</md-tab-body>
 	    	</md-tab>
 	    	<md-tab id="tab2">
 				<md-tab-label>LB</md-tab-label>
 				<md-tab-body>
 					<h4>Weight (Lbs)</h4>
-		      		<input type="number" ng-model="weight">
+					<md-input-container>
+		      			<input type="number" ng-model="weight">
+		      		</md-input-container>
 				</md-tab-body>
 	    	</md-tab>
 	    </md-tabs>    
 	    
 	    <md-tabs class="heightiInput">
 	    	<md-tab id="tab3">
-	    		<md-tab-label>M</md-tab-label>
+	    		<md-tab-label>CM</md-tab-label>
 	    		<md-tab-body>
-					<h4>Height (m)</h4>
-		      		<input type="number" ng-model="weight">
+					<h4>Height (cm)</h4>
+					<md-input-container>
+			      		<input type="number" ng-model="weight">
+			      	</md-input-container>
 				</md-tab-body>
 	    	</md-tab>
 	    	<md-tab id="tab4">
 				<md-tab-label>FT</md-tab-label>
 				<md-tab-body>
 					<h4>Height (Ft)</h4>
-		      		<input type="number" ng-model="weight">
-		      		<p>ft</p>
-		      		<input type="number" ng-model="heightI">
-		      		<p>inch</p>
+					<md-input-container>
+		      			<input type="number" placeholder="ft" ng-model="weight">
+		      		</md-input-container>
+		      		<md-input-container>
+		      			<input type="number" placeholder="inch" ng-model="heightI">
+		      		</md-input-container>
 				</md-tab-body>
 	    	</md-tab>
 	    </md-tabs>
 	    
-	    <div class="result">
-  			<div>BMI = {{calculate()}}</div>
-  			<p>{{showTxt()}}</p>
+	    <div layout="column" layout-align="center center" class="result">
+			<p class="text">Your BMI</p>
+  			<h1>{{calculate()}}</h1>
+  			<p class="status">{{showTxt()}}</p>
   		</div>
     </md-card>
   </md-content>

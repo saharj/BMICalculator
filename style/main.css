@@ -1,3 +1,11 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
 body {
   background-color: rgba(167, 255, 235, 0.52);
 }
@@ -14,10 +22,17 @@ body md-card {
 }
 body md-card .result {
   position: absolute;
-  bottom: 200px;
+  bottom: 150px;
+  width: 60%;
+}
+body md-card .result .text {
+  font-size: 12px;
+}
+body md-card .result .status {
+  color: #E65100;
 }
 body md-card md-tabs {
-  min-height: 135px;
+  min-height: 175px;
 }
 body md-tab {
   position: static;
@@ -31,12 +46,6 @@ body md-tab span {
 }
 body a {
   text-decoration: none;
-}
-body li {
-  float: left;
-  width: 70px;
-  list-style: none;
-  margin-bottom: 20px;
 }
 body h4 {
   width: 100px;
