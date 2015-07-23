@@ -25,32 +25,25 @@ body md-card .result {
   bottom: 150px;
   width: 60%;
 }
+body md-card .result p {
+  margin: 0;
+}
 body md-card .result .text {
-  font-size: 12px;
+  font-size: 11px;
 }
 body md-card .result .status {
   color: #E65100;
 }
 body md-card md-tabs {
-  min-height: 175px;
+  min-height: 150px;
 }
-body md-tab {
+body md-card md-tab {
   position: static;
 }
-body md-tab span {
-  margin-top: 25px;
-  padding-right: 15px;
-  vertical-align: middle;
-  line-height: 30px;
-  height: 35px;
-}
-body a {
+body md-card a {
   text-decoration: none;
 }
-body h4 {
+body md-card h4 {
   width: 100px;
-}
-body .active {
-  background-color: lightblue;
-  color: red;
+  margin: 0 0 10px 20px;
 }

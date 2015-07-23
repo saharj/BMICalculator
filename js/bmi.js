@@ -9,11 +9,6 @@ app.config(function($mdThemingProvider) {
       'hue-2': 'A700', // use shade 600 for the <code>md-hue-2</code> class
       'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
     })
-    // If you specify less than all of the keys, it will inherit from the
-    // default shades
-    .accentPalette('orange', {
-      'default': '500' // use shade 200 for default, and keep all other shades the same
-    });
  });
 
 app.controller('BMICtrl', function($scope){
