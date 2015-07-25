@@ -20,19 +20,25 @@ body md-card {
   margin-top: 50px;
   padding: 50px;
 }
-body md-card .result {
-  position: absolute;
-  bottom: 150px;
+body md-card .result,
+body md-card .desire {
   width: 60%;
 }
-body md-card .result p {
+body md-card .result p,
+body md-card .desire p {
   margin: 0;
 }
-body md-card .result .text {
+body md-card .result .text,
+body md-card .desire .text {
   font-size: 11px;
 }
-body md-card .result .status {
+body md-card .result .status,
+body md-card .desire .status {
   color: #E65100;
+}
+body md-card .result h4,
+body md-card .desire h4 {
+  margin: 16px 0;
 }
 body md-card md-tabs {
   min-height: 150px;
@@ -40,10 +46,19 @@ body md-card md-tabs {
 body md-card md-tab {
   position: static;
 }
+body md-card md-tab-content {
+  padding-top: 10px;
+}
 body md-card a {
   text-decoration: none;
 }
 body md-card h4 {
   width: 100px;
   margin: 0 0 10px 20px;
+}
+body .slide {
+  width: 80%;
+  position: absolute;
+  bottom: 70px;
+  left: 10%;
 }

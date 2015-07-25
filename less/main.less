@@ -13,9 +13,7 @@ body {
     min-height: 675px;
     margin-top: 50px;
     padding: 50px;
-    .result {
-      position: absolute;
-      bottom: 150px;
+    .result, .desire {
       width: 60%;
       p {
         margin: 0;
@@ -26,12 +24,18 @@ body {
       .status {
         color: #E65100;
       }
+      h4 {
+        margin: 16px 0;
+      }
     }
     md-tabs {
       min-height: 150px;
     }
     md-tab {
       position: static;
+    }
+    md-tab-content {
+      padding-top: 10px;
     }
     a {
       text-decoration: none;
@@ -40,5 +44,11 @@ body {
       width: 100px;
       margin: 0 0 10px 20px;
     }
+  }
+  .slide {
+    width: 80%;
+    position: absolute;
+    bottom: 70px;
+    left: 10%;
   }
 }
