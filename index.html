@@ -57,7 +57,7 @@
 	    </md-tabs>
 
 	    <div layout="row">
-	    	<div ng-if="data.output.show" layout="column" class="desire">
+	    	<div ng-if="data.desired.show" layout="column" class="desire">
 				<p class="text">Your Desired BMI</p>
 	  			<h4>{{data.desired.bmi | number:1}}</h1>
 	  			<p class="text">Your Desired Weight</p>
@@ -69,7 +69,7 @@
 	  			<h1>{{data.output.bmi | number:1}}</h1>
 	  			<p class="status" ng-style="{'color': STATUSCOLOR[data.output.status]}">{{STATUS[data.output.status]}}</p>
 	  			<div layout class="slide">
-				    <md-slider flex class="md-primary md-hue-2" md-discrete ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
+				    <md-slider flex class="md-primary md-hue-2" md-discrete ng-change="bmiChanged()" ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
 				    </md-slider>
 			    </div>
 	  		</div>

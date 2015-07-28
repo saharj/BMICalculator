@@ -45,7 +45,8 @@ app.controller('BMICtrl', function($scope){
   	desired: {
   		bmi: 0,
   		weight: 0,
-  		weightUnit: 'kg'
+  		weightUnit: 'kg',
+  		show: false
   	}
   };
 
@@ -80,6 +81,8 @@ app.controller('BMICtrl', function($scope){
   };
 
   $scope.$watch('data.input', function(){
+  	$scope.data.desired.show = false;
+
   	var weight;
   	var height = $scope.getHeight();
 
@@ -126,14 +129,20 @@ app.controller('BMICtrl', function($scope){
 		var bmi = $scope.data.desired.bmi;
 		var height = $scope.getHeight();
 		weight = bmi * height;
-
-		$scope.data.desired.weight = weight;
 		
 		if($scope.tabs.weight === 0) {
 			$scope.data.desired.weightUnit = 'kg';
   		} else {
+  			weight = weight * 2.2046;
 			$scope.data.desired.weightUnit = 'lbs';
   		}
+		
+		$scope.data.desired.weight = weight;
 	});
+
+	$scope.bmiChanged = function() {
+		$scope.data.desired.show = true;
+
+	};
 
 });
