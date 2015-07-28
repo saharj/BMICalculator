@@ -67,7 +67,7 @@
 		    <div ng-if="data.output.show" layout="column" layout-align="center center" class="result">
 				<p class="text">Your BMI</p>
 	  			<h1>{{data.output.bmi | number:1}}</h1>
-	  			<p class="status">{{STATUS[data.output.status]}}</p>
+	  			<p class="status" ng-style="{'color': STATUSCOLOR[data.output.status]}">{{STATUS[data.output.status]}}</p>
 	  			<div layout class="slide">
 				    <md-slider flex class="md-primary md-hue-2" md-discrete ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
 				    </md-slider>

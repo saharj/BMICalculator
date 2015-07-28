@@ -32,10 +32,6 @@ body md-card .result .text,
 body md-card .desire .text {
   font-size: 11px;
 }
-body md-card .result .status,
-body md-card .desire .status {
-  color: #E65100;
-}
 body md-card .result h4,
 body md-card .desire h4 {
   margin: 16px 0;
@@ -61,4 +57,7 @@ body .slide {
   position: absolute;
   bottom: 70px;
   left: 10%;
+}
+body .green {
+  color: #00695C;
 }

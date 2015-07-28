@@ -56,6 +56,14 @@ app.controller('BMICtrl', function($scope){
   	'Obese',
   	'Morbid Obese'
   ];
+
+  $scope.STATUSCOLOR = [
+  	'grey',
+  	'green',
+  	'gold',
+  	'oranger',
+  	'red'
+  ];
   
   $scope.getHeight = function() {
   	var height;
