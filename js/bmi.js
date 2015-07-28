@@ -61,7 +61,7 @@ app.controller('BMICtrl', function($scope){
   	'grey',
   	'green',
   	'gold',
-  	'oranger',
+  	'darkorange',
   	'red'
   ];
   
