@@ -56,10 +56,24 @@ app.controller('BMICtrl', function($scope){
   	'Obese',
   	'Morbid Obese'
   ];
+  
+  $scope.getHeight = function() {
+  	var height;
+  	if($scope.tabs.height === 0) {
+  		height = ($scope.data.input.metric.height) / 100;
+  	}
+  	else {
+  		var foot = $scope.data.input.imperial.height.foot;
+  		var inch = $scope.data.input.imperial.height.inch;
+  		height = ((foot * 12) + inch) * 0.0254;
+  	}
+  	height = Math.pow(height, 2);
+  	return height;
+  };
 
   $scope.$watch('data.input', function(){
   	var weight;
-  	var height;
+  	var height = $scope.getHeight();
 
   	if($scope.tabs.weight === 0) {
   		weight = $scope.data.input.metric.weight;
@@ -68,22 +82,13 @@ app.controller('BMICtrl', function($scope){
   		weight = $scope.data.input.imperial.weight;
   		weight = weight / 2.2046;
   	}
-  	if($scope.tabs.height === 0) {
-  		height = $scope.data.input.metric.height;
-  	}
-  	else {
-  		var foot = $scope.data.input.imperial.height.foot;
-  		var inch = $scope.data.input.imperial.height.inch;
-  		height = ((foot * 12) + inch) * 0.0254;
-  	}
 
-  	height = Math.pow(height, 2);
   	$scope.data.output.bmi = weight / height;
 
   	var bmi = $scope.data.output.bmi;
   	$scope.data.desired.bmi = bmi;
 
-  	if(isNaN(bmi) || !Number.isFinite(bmi)) {
+  	if(isNaN(bmi) || !Number.isFinite(bmi) || bmi <= 0 || bmi > 100) {
   		$scope.data.output.show = false;
   	} else {
   		$scope.data.output.show = true;
@@ -108,7 +113,11 @@ app.controller('BMICtrl', function($scope){
   }, true);
 
 	$scope.$watch('data.desired.bmi', function(){
-		var weight = 100;
+		var weight;
+
+		var bmi = $scope.data.desired.bmi;
+		var height = $scope.getHeight();
+		weight = bmi * height;
 
 		$scope.data.desired.weight = weight;
 		
@@ -117,9 +126,6 @@ app.controller('BMICtrl', function($scope){
   		} else {
 			$scope.data.desired.weightUnit = 'lbs';
   		}
-		// var bmi = $scope.data.desired.bmi;
-		// var height = 100;
-		// weight = bmi * height;
 	});
 
 });
