@@ -1,24 +1,29 @@
-var capital = function(name){
-	return name.charAt(0).toUpperCase() + name.substring(1).toLowerCase();
-};
+describe('BMIcalc', function() {
+	var $scope;
+	var controller;
 
+	beforeEach(window.angular.mock.module('BMI'));
 
-
-describe('capitalize', function(){
-	it('capitalize the word', function() {
-		var name = "mohsen";
-		var result = capital(name);
-		expect(result).toBe("Mohsen");
-		
+	beforeEach(function() {
+		inject(function(_$rootScope_, $controller) {
+            $scope = _$rootScope_.$new();
+            controller = $controller("BMICtrl", {$scope: $scope});
+        });
 	});
-	it('does nothing', function(){
-		var name = '';
-		var result = capital(name);
-		expect(result).toBe(result);
-	});
-	it('captalize the capital word', function(){
-		var name = 'SAHAR';
-		var result = capital(name);
-		expect(result).toBe('Sahar');
+
+	describe('check $scope.data', function() {
+		it('output.show should be false', function() {
+			expect($scope.data.output.show).toBe(false);
+		});
+		it('desire.show should be false', function() {
+			expect($scope.data.desired.show).toBe(false);
+		});
+	})
+
+	describe('$scope.STATUS', function() {
+		it('Underweight should be grey color', function() {
+			$scope.data.output.status = 2;
+			expect($scope.STATUS[$scope.data.output.status]).toBe('Overweight');
+		});
 	});
 });
