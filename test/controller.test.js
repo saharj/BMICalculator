@@ -28,6 +28,15 @@ describe('BMIcalc', function() {
 			$scope.$digest();
 			expect($scope.data.output.bmi).toBeCloseTo(21.2, 1);
 		});
+		it('BMI for imperial measures', function(){
+			$scope.tabs.height = 1;
+			$scope.tabs.weight = 1;
+			$scope.data.input.imperial.weight = 245;
+			$scope.data.input.imperial.height.foot = 5;
+			$scope.data.input.imperial.height.inch = 9;
+			$scope.$digest();
+			expect($scope.data.output.bmi).toBeCloseTo(36.2, 1);
+		});
 	});
 
 	describe('status', function() {
