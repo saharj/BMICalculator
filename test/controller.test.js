@@ -22,13 +22,13 @@ describe('BMIcalc', function() {
 	})
 
 	describe('basic output', function() {
-		it('BMI for metric measures', function() {
+		it('calculate BMI for metric measures', function() {
 			$scope.data.input.metric.weight = 57.4;
 			$scope.data.input.metric.height = 164.5;
 			$scope.$digest();
 			expect($scope.data.output.bmi).toBeCloseTo(21.2, 1);
 		});
-		it('BMI for imperial measures', function(){
+		it('calculate BMI for imperial measures', function(){
 			$scope.tabs.height = 1;
 			$scope.tabs.weight = 1;
 			$scope.data.input.imperial.weight = 245;
