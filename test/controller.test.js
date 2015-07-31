@@ -28,7 +28,7 @@ describe('BMIcalc', function() {
 			$scope.$digest();
 			expect($scope.data.output.bmi).toBeCloseTo(21.2, 1);
 		});
-		it('calculate BMI for imperial measures', function(){
+		it('calculate BMI for imperial measures', function() {
 			$scope.tabs.height = 1;
 			$scope.tabs.weight = 1;
 			$scope.data.input.imperial.weight = 245;
@@ -38,6 +38,26 @@ describe('BMIcalc', function() {
 			expect($scope.data.output.bmi).toBeCloseTo(36.2, 1);
 		});
 	});
+
+	describe('getHeigh()', function() {
+		it('height for metric value', function() {
+			$scope.tabs.height = 0;
+			$scope.data.input.metric.height = 170;
+			$scope.getHeight();
+			expect($scope.getHeight()).toBeCloseTo(2.89);
+		});
+	});
+
+	// describe('checking desired', function() {
+	// 	it('calculate metric desired weight', function() {
+	// 		$scope.tabs.height = 0;
+	// 		$scope.tabs.weight = 0;
+	// 		$scope.data.input.metric.height = 170;
+	// 		$scope.data.desired.bmi = 21;
+	// 		$scope.$digest();
+	// 		expect($scope.data.desired.weight).toBeCloseTo(60.6);
+	// 	});
+	// });
 
 	describe('status', function() {
 		it('Overweight should be gold color', function() {
