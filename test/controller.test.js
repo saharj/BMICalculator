@@ -59,16 +59,26 @@ describe('BMIcalc', function() {
 			$scope.$digest();
 			expect($scope.data.desired.weight).toBeCloseTo(60.7, 1);
 		});
-		it('calculate imperial desired weight', function() {
+		it('calculate imperial desired weight with imperial height', function() {
 			$scope.tabs.height = 1;
 			$scope.tabs.weight = 1;
 			$scope.data.input.imperial.height.foot = 5;
-			$scope.data.input.imperial.height.inch = 9
+			$scope.data.input.imperial.height.inch = 9;
 			$scope.data.input.imperial.weight = 138;
 			$scope.$digest();
 			$scope.data.desired.bmi = 20;
 			$scope.$digest();
 			expect($scope.data.desired.weight).toBeCloseTo(135.4, 1);
+		});
+		it('calculate imperial desired weight with metric height', function() {
+			$scope.tabs.height = 0;
+			$scope.tabs.weight = 1;
+			$scope.data.input.metric.height = 170;
+			$scope.data.input.imperial.weight = 138;
+			$scope.$digest();
+			$scope.data.desired.bmi = 21;
+			$scope.$digest();
+			expect($scope.data.desired.weight).toBeCloseTo(133.8, 1);
 		});
 	});
 
