@@ -4,6 +4,19 @@ var wiredep = require('wiredep').stream;
 var less = require('gulp-less')
 var livereload = require('gulp-livereload');
 var Server = require('karma').Server;
+var angularProtractor = require('gulp-angular-protractor');
+
+
+gulp.task('endToEnd', function(){
+  gulp.src(['./test/e2e/index.js'])
+      .pipe(angularProtractor({
+          'configFile': 'protractor.conf.js',
+          'args': ['--baseUrl', 'http://127.0.0.1:8080'],
+          'autoStartStopServer': true,
+          'debug': true
+      }))
+      .on('error', function(e) { throw e })
+});
 
 /**
  * Run test once and exit
