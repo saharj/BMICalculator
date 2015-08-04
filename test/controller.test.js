@@ -64,11 +64,11 @@ describe('BMIcalc', function() {
 			$scope.tabs.weight = 0;
 			$scope.data.input.imperial.height.foot = 5;
 			$scope.data.input.imperial.height.inch = 9;
-			$scope.data.input.metric.weight = 138;
+			$scope.data.input.metric.weight = 65;
 			$scope.$digest();
 			$scope.data.desired.bmi = 20;
 			$scope.$digest();
-			expect($scope.data.desired.weight).toBeCloseTo(135.4, 1);
+			expect($scope.data.desired.weight).toBeCloseTo(61.4, 1);
 		});
 		it('calculate imperial desired weight with imperial height', function() {
 			$scope.tabs.height = 1;

@@ -3,7 +3,7 @@ describe('default state', function() {
 		browser.get('http://127.0.0.1:8080');
 		expect(browser.getTitle()).toEqual('BMI');
 	});
-	xit('metric weight should be selected', function() {
+	it('metric weight should be selected', function() {
 		expect($scope.tabs.weight).toEqual(0);
 	});
 });
