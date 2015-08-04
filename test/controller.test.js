@@ -19,6 +19,12 @@ describe('BMIcalc', function() {
 		it('desire.show should be false', function() {
 			expect($scope.data.desired.show).toBe(false);
 		});
+		it('weight shoul be on metric', function() {
+			expect($scope.tabs.weight).toEqual(0);
+		});
+		it('height shoul be on metric', function() {
+			expect($scope.tabs.height).toEqual(0);
+		});
 	})
 
 	describe('basic output', function() {
