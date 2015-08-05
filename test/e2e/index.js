@@ -3,10 +3,8 @@ describe('default state', function() {
 		browser.get('http://127.0.0.1:8080');
 		expect(browser.getTitle()).toEqual('BMI');
 	});
-	xit('background color', function() {
-		expect(element.by.id('body')).toEqual(0);
-	});
 });
+
 describe('output check', function() {
 	it('should return 21.2', function() {
 		element(by.model('data.input.metric.weight')).sendKeys(57);

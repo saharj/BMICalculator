@@ -23,6 +23,7 @@ body md-card {
 body md-card .result,
 body md-card .desire {
   width: 60%;
+  margin: 0 auto;
 }
 body md-card .result p,
 body md-card .desire p {
@@ -32,9 +33,17 @@ body md-card .result .text,
 body md-card .desire .text {
   font-size: 11px;
 }
+body md-card .result #status,
+body md-card .desire #status {
+  font-size: 17px;
+}
 body md-card .result h4,
 body md-card .desire h4 {
-  margin: 16px 0;
+  width: auto;
+  margin-top: 16px;
+}
+body md-card .desire p.light {
+  color: darkgrey;
 }
 body md-card md-tabs {
   min-height: 150px;
