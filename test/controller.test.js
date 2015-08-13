@@ -100,11 +100,17 @@ describe('BMIcalc', function() {
 	});
 
 	describe('status', function() {
-		it('Overweight should be gold color', function() {
+		it('color should be gold', function() {
 			$scope.data.input.metric.weight = 70;
 			$scope.data.input.metric.height = 164.5;
 			$scope.$digest();
-			expect($scope.STATUS[$scope.data.output.status]).toBe('Overweight');
+			expect($scope.STATUSCOLOR[$scope.data.output.status]).toBe('gold');
+		});
+		it('should return Normal', function() {
+			$scope.data.input.metric.weight = 57;
+			$scope.data.input.metric.height = 164.5;
+			$scope.$digest();
+			expect($scope.STATUS[$scope.data.output.status]).toBe('Normal');
 		});
 	});
 });
