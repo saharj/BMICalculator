@@ -4,81 +4,82 @@
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
 	<!-- endbower -->
 	<link rel="stylesheet" href="./style/main.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BMI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BMI</title>
 </head>
 <body id="body" ng-controller="BMICtrl" ng-cloak>
-  <div layout="column" layout-align="space-between center">
-  <md-content class="md-padding">
-  	<md-card>
-	    <h4>Weight</h4>
-	    <md-tabs md-selected="tabs.weight">
-	    	<md-tab id="tab1">
-	    		<md-tab-label>metric</md-tab-label>
-	    		<md-tab-body>
-	    			<md-content></md-content>
+
+	<div layout="column" layout-align="space-between center">
+	<md-content class="md-padding">
+	<md-card>
+		<h4>Weight</h4>
+		<md-tabs md-selected="tabs.weight">
+			<md-tab id="tab1">
+				<md-tab-label>metric</md-tab-label>
+				<md-tab-body>
+					<md-content></md-content>
 					<md-input-container>
-			      		<input ng-model="data.input.metric.weight" type="number" placeholder="kg">
-			      	</md-input-container>
+						<input ng-model="data.input.metric.weight" type="number" placeholder="kg">
+					</md-input-container>
 				</md-tab-body>
-	    	</md-tab>
-	    	<md-tab id="tab2">
+			</md-tab>
+			<md-tab id="tab2">
 				<md-tab-label>imperial</md-tab-label>
 				<md-tab-body>
 					<md-input-container>
-		      			<input type="number" placeholder="lb" ng-model="data.input.imperial.weight">
-		      		</md-input-container>
+						<input type="number" placeholder="lb" ng-model="data.input.imperial.weight">
+					</md-input-container>
 				</md-tab-body>
-	    	</md-tab>
-	    </md-tabs>    
-	    
+			</md-tab>
+		</md-tabs>
+	
 		<h4>Height</h4>
-	    <md-tabs md-selected="tabs.height" class="heightiInput">
-	    	<md-tab id="tab3">
-	    		<md-tab-label>Metric</md-tab-label>
-	    		<md-tab-body>
+		<md-tabs md-selected="tabs.height" class="heightiInput">
+			<md-tab id="tab3">
+				<md-tab-label>Metric</md-tab-label>
+				<md-tab-body>
 					<md-input-container>
-			      		<input type="number" placeholder="cm" ng-model="data.input.metric.height">
-			      	</md-input-container>
+						<input type="number" placeholder="cm" ng-model="data.input.metric.height">
+					</md-input-container>
 				</md-tab-body>
-	    	</md-tab>
-	    	<md-tab id="tab4">
+			</md-tab>
+			<md-tab id="tab4">
 				<md-tab-label>imperial</md-tab-label>
 				<md-tab-body>
 					<md-input-container>
-		      			<input type="number" placeholder="ft" ng-model="data.input.imperial.height.foot">
-		      		</md-input-container>
-		      		<md-input-container>
-		      			<input type="number" placeholder="inch" ng-model="data.input.imperial.height.inch">
-		      		</md-input-container>
-				</md-tab-body>
-	    	</md-tab>
-	    </md-tabs>
+						<input type="number" placeholder="ft" ng-model="data.input.imperial.height.foot">
+					</md-input-container>
+					<md-input-container>
+						<input type="number" placeholder="inch" ng-model="data.input.imperial.height.inch">
+					</md-input-container>
+		</md-tab-body>
+			</md-tab>
+		</md-tabs>
 
-	    <div layout="row">
-	    	<div ng-if="data.desired.show" layout="column" class="desire">
+		<div layout="row">
+			<div ng-if="data.desired.show" layout="column" class="desire">
 				<p class="text light">Your Desired BMI</p>
-	  			<h4>{{data.desired.bmi | number:1}}</h4>
-	  			<p class="text light">Your Desired Weight</p>
-	  			<h4>{{data.desired.weight | number:1}} {{data.desired.weightUnit}}</h4>
-	  		</div>
+				<h4>{{data.desired.bmi | number:1}}</h4>
+				<p class="text light">Your Desired Weight</p>
+				<h4>{{data.desired.weight | number:1}} {{data.desired.weightUnit}}</h4>
+			</div>
 
-		    <div ng-if="data.output.show" layout="column" layout-align="center center" class="result">
+			<div ng-if="data.output.show" layout="column" layout-align="center center" class="result">
 				<p class="text">Your BMI</p>
-	  			<h1 id="bmi">{{data.output.bmi | number:1}}</h1>
-	  			<p id="status" ng-style="{'color': STATUSCOLOR[data.output.status]}">{{STATUS[data.output.status]}}</p>
-	  		</div>
-  		</div>
-  		<div layout class="slide" ng-if="data.output.show">
+				<h1 id="bmi">{{data.output.bmi | number:1}}</h1>
+				<p id="status" ng-style="{'color': STATUSCOLOR[data.output.status]}">{{STATUS[data.output.status]}}</p>
+			</div>
+		</div>
+		<div layout class="slide" ng-if="data.output.show">
 			<md-slider flex class="md-primary md-hue-2" md-discrete ng-change="bmiChanged()" ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
 			</md-slider>
 		</div>
-    </md-card>
-  </md-content>
-  </div>
+	</md-card>
+	</md-content>
+	</div>
 
-  	<!--bower:js -->
+	<!--bower:js -->
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-animate/angular-animate.js"></script>
 	<script src="bower_components/angular-aria/angular-aria.js"></script>
