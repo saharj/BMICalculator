@@ -9,75 +9,79 @@
 	<title>BMI</title>
 </head>
 <body id="body" ng-controller="BMICtrl" ng-cloak>
-	<div class="info" layout="column" layout-align="space-between">
-		<p class="bold">Instructions:</p>
-		<p>Choose metric or imperial system for both weight and height inputs.</p>
-		<p>You can move the slider on the buttom to the right/left and select your disired BMI, and the application will tell you what weight do you need to be.</p>
-	</div>
 	<div layout="column" layout-align="space-between center">
 	<md-content class="md-padding">
 	<md-card>
-		<h4>Weight</h4>
-		<md-tabs md-selected="tabs.weight">
-			<md-tab id="tab1">
-				<md-tab-label>metric</md-tab-label>
-				<md-tab-body>
-					<md-content></md-content>
-					<md-input-container>
-						<input ng-model="data.input.metric.weight" type="number" placeholder="kg">
-					</md-input-container>
-				</md-tab-body>
-			</md-tab>
-			<md-tab id="tab2">
-				<md-tab-label>imperial</md-tab-label>
-				<md-tab-body>
-					<md-input-container>
-						<input type="number" placeholder="lb" ng-model="data.input.imperial.weight">
-					</md-input-container>
-				</md-tab-body>
-			</md-tab>
-		</md-tabs>
-	
-		<h4>Height</h4>
-		<md-tabs md-selected="tabs.height" class="heightiInput">
-			<md-tab id="tab3">
-				<md-tab-label>Metric</md-tab-label>
-				<md-tab-body>
-					<md-input-container>
-						<input type="number" placeholder="cm" ng-model="data.input.metric.height">
-					</md-input-container>
-				</md-tab-body>
-			</md-tab>
-			<md-tab id="tab4">
-				<md-tab-label>imperial</md-tab-label>
-				<md-tab-body>
-					<md-input-container>
-						<input type="number" placeholder="ft" ng-model="data.input.imperial.height.foot">
-					</md-input-container>
-					<md-input-container>
-						<input type="number" placeholder="inch" ng-model="data.input.imperial.height.inch">
-					</md-input-container>
-		</md-tab-body>
-			</md-tab>
-		</md-tabs>
-
-		<div layout="row">
-			<div ng-if="data.desired.show" layout="column" class="desire">
-				<p class="text light">Your Desired BMI</p>
-				<h4>{{data.desired.bmi | number:1}}</h4>
-				<p class="text light">Your Desired Weight</p>
-				<h4>{{data.desired.weight | number:1}} {{data.desired.weightUnit}}</h4>
+		<div layout="row" layout-wrap>
+			<div flex="33" class="info" layout="column" layout-align="space-between">
+				<p class="bold">Instructions:</p>
+				<p>Choose metric or imperial system for Weight or Height inputs.</p>
+				<p>Move the slider on the buttom to the right/left and select your disired BMI to find out what weight do you need to be.</p>
 			</div>
+			<div flex="65">
+				<h4>Weight</h4>
+				<md-tabs md-selected="tabs.weight">
+					<md-tab id="tab1">
+						<md-tab-label>metric</md-tab-label>
+						<md-tab-body>
+							<md-content></md-content>
+							<md-input-container>
+								<input ng-model="data.input.metric.weight" type="number" placeholder="kg">
+							</md-input-container>
+						</md-tab-body>
+					</md-tab>
+					<md-tab id="tab2">
+						<md-tab-label>imperial</md-tab-label>
+						<md-tab-body>
+							<md-input-container>
+								<input type="number" placeholder="lb" ng-model="data.input.imperial.weight">
+							</md-input-container>
+						</md-tab-body>
+					</md-tab>
+				</md-tabs>
+			
+				<h4>Height</h4>
+				<md-tabs md-selected="tabs.height" class="heightiInput">
+					<md-tab id="tab3">
+						<md-tab-label>Metric</md-tab-label>
+						<md-tab-body>
+							<md-input-container>
+								<input type="number" placeholder="cm" ng-model="data.input.metric.height">
+							</md-input-container>
+						</md-tab-body>
+					</md-tab>
+					<md-tab id="tab4">
+						<md-tab-label>imperial</md-tab-label>
+						<md-tab-body>
+							<md-input-container>
+								<input type="number" placeholder="ft" ng-model="data.input.imperial.height.foot">
+							</md-input-container>
+							<md-input-container>
+								<input type="number" placeholder="inch" ng-model="data.input.imperial.height.inch">
+							</md-input-container>
+				</md-tab-body>
+					</md-tab>
+				</md-tabs>
 
-			<div ng-if="data.output.show" layout="column" layout-align="center center" class="result">
-				<p class="text">Your BMI</p>
-				<h1 id="bmi">{{data.output.bmi | number:1}}</h1>
-				<p id="status" ng-style="{'color': STATUSCOLOR[data.output.status]}">{{STATUS[data.output.status]}}</p>
+				<div layout="row">
+					<div ng-if="data.desired.show" layout="column" class="desire">
+						<p class="text light">Your Desired BMI</p>
+						<h4>{{data.desired.bmi | number:1}}</h4>
+						<p class="text light">Your Desired Weight</p>
+						<h4>{{data.desired.weight | number:1}} {{data.desired.weightUnit}}</h4>
+					</div>
+
+					<div ng-if="data.output.show" layout="column" layout-align="center center" class="result">
+						<p class="text">Your BMI</p>
+						<h1 id="bmi">{{data.output.bmi | number:1}}</h1>
+						<p id="status" ng-style="{'color': STATUSCOLOR[data.output.status]}">{{STATUS[data.output.status]}}</p>
+					</div>
+				</div>
+				<div layout class="slide" ng-if="data.output.show">
+					<md-slider flex class="md-primary md-hue-2" md-discrete ng-change="bmiChanged()" ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
+					</md-slider>
+				</div>
 			</div>
-		</div>
-		<div layout class="slide" ng-if="data.output.show">
-			<md-slider flex class="md-primary md-hue-2" md-discrete ng-change="bmiChanged()" ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
-			</md-slider>
 		</div>
 	</md-card>
 	</md-content>

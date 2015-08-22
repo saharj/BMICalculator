@@ -10,18 +10,18 @@ body {
   background-color: rgba(167, 255, 235, 0.52);
 }
 body .info {
-  width: 22%;
-  float: left;
-  margin: 70px 0 0 10px;
-  padding: 30px 20px;
-  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.7);
+  height: 240px;
+  font-size: 13px;
+  margin-right: 5px;
 }
 body .info .bold {
   font-weight: bold;
+  margin: 0;
 }
 body md-content {
   background-color: rgba(167, 255, 235, 0);
-  width: 40%;
+  width: 45%;
   min-width: 350px;
 }
 body md-card {
