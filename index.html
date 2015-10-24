@@ -76,10 +76,10 @@
 						<h1 id="bmi">{{data.output.bmi | number:1}}</h1>
 						<p id="status" ng-style="{'color': STATUSCOLOR[data.output.status]}">{{STATUS[data.output.status]}}</p>
 					</div>
-				</div>
-				<div layout class="slide" ng-if="data.output.show">
-					<md-slider flex class="md-primary md-hue-2" md-discrete ng-change="bmiChanged()" ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
-					</md-slider>
+					<div layout class="slide" ng-if="data.output.show">
+						<md-slider flex class="md-primary md-hue-2" md-discrete ng-change="bmiChanged()" ng-model="data.desired.bmi" step="1" min="10" max="50" aria-label="rating">
+						</md-slider>
+					</div>
 				</div>
 			</div>
 		</div>
