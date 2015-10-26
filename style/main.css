@@ -62,9 +62,6 @@ body md-card .desire h4 {
 body md-card .desire p.light {
   color: darkgrey;
 }
-body md-card md-tabs {
-  min-height: 150px !important;
-}
 body md-card md-tab {
   position: static;
 }
