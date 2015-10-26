@@ -17,6 +17,7 @@ body .info {
   color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
   text-shadow: 1px 1px 0 #E0E0E0;
+  font-style: italic;
 }
 body .info .bold {
   font-weight: bold;
@@ -62,7 +63,7 @@ body md-card .desire p.light {
   color: darkgrey;
 }
 body md-card md-tabs {
-  min-height: 150px;
+  min-height: 150px !important;
 }
 body md-card md-tab {
   position: static;
@@ -78,10 +79,13 @@ body md-card h4 {
   margin: 0 0 10px 20px;
 }
 body .slide {
-  width: 80%;
+  width: 78%;
   position: absolute;
-  bottom: 81px;
-  left: 10%;
+  bottom: 70px;
+  left: 11%;
+}
+body .slide .md-thumb-text {
+  display: none;
 }
 body .green {
   color: #00695C;

@@ -11,12 +11,15 @@ body {
     color: rgba(0, 0, 0, 0.7);
     font-size: 14px;
     text-shadow: 1px 1px 0 #E0E0E0;
+    font-style: italic;
     .bold {
       font-weight: bold;
       margin: 0;
     }
     p {
       margin-top: 70px;
+    }
+    .hidden {
     }
   }
   md-content {
@@ -52,7 +55,7 @@ body {
       }
     }
     md-tabs {
-      min-height: 150px;
+      min-height: 150px !important;
     }
     md-tab {
       position: static;
@@ -69,10 +72,13 @@ body {
     }
   }
   .slide {
-    width: 80%;
+    width: 78%;
     position: absolute;
-    bottom: 81px;
-    left: 10%;
+    bottom: 70px;
+    left: 11%;
+    .md-thumb-text {
+      display: none;
+    }
   }
   .green {
     color: #00695C;
